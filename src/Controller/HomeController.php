@@ -8,12 +8,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/home", name="home")
+     * @Route("/", name="home")
      */
     public function index()
     {
         // Get data
-        $url = 'https://testgraphql.local';
+        $url = 'https://testgraphql.local/api/graphql/';
 
         $query = [
             "query" => "{
@@ -38,6 +38,9 @@ class HomeController extends AbstractController
         // END DEVELOP ONLY
         $result = json_decode(curl_exec($ch));
 
+        if (curl_errno($ch)) {
+            dump(curl_error($ch));die;
+        }
 
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
