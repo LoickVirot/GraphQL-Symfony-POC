@@ -33,19 +33,17 @@ class MovieMutation implements MutationInterface, AliasedInterface
     }
 
 
-    public function createMovie(string $title, string $resume) : array {
+    public function createMovie(string $title, string $resume) : Movie
+    {
         $movie = new Movie();
         $movie
             ->setTitle($title)
-            ->setResume($resume)
-        ;
+            ->setResume($resume);
         $this->entityManager->persist($movie);
         $this->entityManager->flush();
 
         $savedMovie = $this->movieRepository->findOneBy(['title' => $title]);
-        return [
-            'id' => $savedMovie->getId(),
-        ];
+        return $savedMovie;
     }
 
     public function deleteMovie(string $id) : array {

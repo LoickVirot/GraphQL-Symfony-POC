@@ -1,10 +1,3 @@
-CreateMoviePayload:
-  type: object
-  config:
-    fields:
-      id:
-        type: String!
-
 CreateMovieInput:
   type: input-object
   config:

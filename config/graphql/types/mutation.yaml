@@ -3,7 +3,7 @@ Mutation:
   config:
     fields:
       CreateMovie:
-        type: CreateMoviePayload
+        type: Movie
         resolve: "@=mutation('create_movie', [ args['input']['title'], args['input']['resume'] ])"
         args:
           input: CreateMovieInput!
