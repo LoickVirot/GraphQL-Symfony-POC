@@ -1,0 +1,13 @@
+Query:
+  type: object
+  config:
+    description: "A movie."
+    fields:
+      movies:
+        type: "[Movie!]!"
+        resolve: '@=resolver("get_movies", [])'
+      movie:
+          type: "Movie"
+          args:
+              id: String!
+          resolve: '@=resolver("get_movie", [args["id"]])'

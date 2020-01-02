@@ -1,0 +1,15 @@
+Movie:
+  type: object
+  config:
+    #resolveField: '@=resolver("App\\GraphQL\\Resolver\\Movies", [info])'
+    description: A movie
+    fields:
+      id:
+        type: String!
+        description: ID of the movie
+      title:
+        type: "String"
+        description: Movie's title
+      resume:
+          type: "String"
+          description: Movie's resume

@@ -1,0 +1,6 @@
+DeleteMoviePayload:
+  type: object
+  config:
+    fields:
+      affectedRows:
+        type: Int!

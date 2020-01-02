@@ -1,0 +1,15 @@
+CreateMoviePayload:
+  type: object
+  config:
+    fields:
+      id:
+        type: String!
+
+CreateMovieInput:
+  type: input-object
+  config:
+    fields:
+      title:
+        type: String!
+      resume:
+        type: String!

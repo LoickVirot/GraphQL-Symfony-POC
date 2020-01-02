@@ -1,0 +1,16 @@
+Mutation:
+  type: object
+  config:
+    fields:
+      CreateMovie:
+        type: CreateMoviePayload
+        resolve: "@=mutation('create_movie', [ args['input']['title'], args['input']['resume'] ])"
+        args:
+          input: CreateMovieInput!
+
+      DeleteMovie:
+        type: DeleteMoviePayload
+        resolve: "@=mutation('delete_movie', [ args['id'] ])"
+        args:
+          id:
+            type: String!
