@@ -3,11 +3,23 @@ Query:
   config:
     description: "A movie."
     fields:
+
       movies:
         type: "[Movie!]!"
         resolve: '@=resolver("get_movies", [])'
+
       movie:
-          type: "Movie"
-          args:
-              id: String!
-          resolve: '@=resolver("get_movie", [args["id"]])'
+        type: "Movie"
+        args:
+            id: String!
+        resolve: '@=resolver("get_movie", [args["id"]])'
+
+      categories:
+        type: "[Category!]!"
+        resolve: '@=resolver("get_categories", [])'
+
+      category:
+        type: "Category"
+        args:
+          id: String!
+        resolve: '@=resolver("get_category", [args["id"]])'

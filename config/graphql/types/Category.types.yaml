@@ -1,0 +1,14 @@
+Category:
+  type: object
+  config:
+    description: "Group of many movies"
+    fields:
+      id:
+        type: String!
+        description: "Category's ID"
+      title:
+        type: String
+        description: "Name of the category"
+      movies:
+        type: "[Movie]"
+        description: "List of movies in this category"

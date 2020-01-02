@@ -13,3 +13,6 @@ Movie:
       resume:
           type: "String"
           description: Movie's resume
+      categories:
+          type: "[Category]"
+          description: "Categories of this movie"
