@@ -19,7 +19,8 @@
     },
     "require-dev": {
         "overblog/graphiql-bundle": "^0.2.0",
-        "symfony/maker-bundle": "^1.14"
+        "symfony/maker-bundle": "^1.14",
+        "symfony/profiler-pack": "^1.0"
     },
     "config": {
         "preferred-install": {
