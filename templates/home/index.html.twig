@@ -14,7 +14,16 @@
     Here is a list of all movies registered in database, retrieved with GraphQL:
     <ul>
         {% for movie in movies %}
-            <li>ID: {{ movie.id }} - {{ movie.title }}</li>
+            <li>
+                ID: {{ movie.id }} - {{ movie.title }} -
+                {% if movie.categories|length == 0%}
+                    <i>No categories</i>
+                {% else %}
+                    {% for category in movie.categories %}
+                        {{ category.title }}
+                    {% endfor %}
+                {% endif %}
+            </li>
         {% endfor %}
     </ul>
 </div>

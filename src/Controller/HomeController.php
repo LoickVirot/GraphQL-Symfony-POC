@@ -18,9 +18,12 @@ class HomeController extends AbstractController
         $query = [
             "query" => "{
                 movies {
-                id
-                title
-                resume
+                    id
+                    title
+                    resume
+                    categories {
+                        title
+                    }
                 }
             }",
         ];
